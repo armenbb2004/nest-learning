@@ -21,9 +21,6 @@ export class UsersRepository extends Repository<User> {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    console.log('salt', salt);
-    console.log('hashedPassword', hashedPassword);
-
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const user = this.create({ username, password: hashedPassword });
     try {
